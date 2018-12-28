@@ -20,8 +20,8 @@ public class TransactionDaoImpl extends BaseImpl implements TransactionDao {
 	private TransactionRepository repository;
 	
 	@Override
-	public Transaction getById(String id) throws CustomException {
-		return repository.findOne(Integer.valueOf(id));
+	public Transaction getById(int id) throws CustomException {
+		return repository.findOne(id);
 	}
 
 	@Override

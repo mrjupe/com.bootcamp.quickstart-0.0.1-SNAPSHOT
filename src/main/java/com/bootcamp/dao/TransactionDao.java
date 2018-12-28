@@ -8,7 +8,7 @@ import com.bootcamp.quickstart.CustomException;
 
 public interface TransactionDao {
 
-	Transaction getById(String id) throws CustomException;
+	Transaction getById(int id) throws CustomException;
 	Transaction save(Transaction transaction) throws CustomException;
 	void delete(Transaction transaction) throws CustomException;
 	List<Transaction> getList() throws CustomException;

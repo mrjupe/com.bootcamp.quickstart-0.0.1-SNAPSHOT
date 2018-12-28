@@ -42,10 +42,10 @@ public class AccountController {
 	private CustomerDao customerDao;
 
 	@GetMapping("/{accountnumber}")
-	public CommonResponse getById(@PathVariable("accountnumber") String accountnumber) throws CustomException {
+	public CommonResponse getById(@PathVariable("accountnumber") int accountnumber) throws CustomException {
 		LOGGER.info("accountnumber : {}", accountnumber);
 		try {
-			Account account = accountDao.getById(Integer.parseInt(accountnumber));
+			Account account = accountDao.getById(accountnumber);
 			return new CommonResponse<AccountDto>(modelMapper.map(account, AccountDto.class));
 		} catch (CustomException e) {
 			LOGGER.error(e.getMessage());
@@ -92,22 +92,22 @@ public class AccountController {
 	}
 
 	@PutMapping("")
-	public CommonResponse update(@RequestBody AccountDto account) throws CustomException{
+	public CommonResponse update(@RequestBody AccountDto account) throws CustomException {
 		try {
 			Account checkAccount = accountDao.getById(account.getAccountnumber());
 			if (checkAccount == null) {
 				return new CommonResponse("14", "account tidak ditemukan");
 			}
-			if(account.getOpendate() != null) {
+			if (account.getOpendate() != null) {
 				checkAccount.setOpendate(account.getOpendate());
 			}
-			if(account.getBalance() != 0) {
+			if (account.getBalance() != 0) {
 				checkAccount.setBalance(account.getBalance());
 			}
-			if(account.getCustomer() != null) {
+			if (account.getCustomer() != null) {
 				checkAccount.setCustomer(account.getCustomer());
 			}
-			
+
 			checkAccount = accountDao.save(checkAccount);
 			return new CommonResponse<AccountDto>(modelMapper.map(checkAccount, AccountDto.class));
 		} catch (CustomException e) {
@@ -124,7 +124,7 @@ public class AccountController {
 			Account account = modelMapper.map(accountDto, Account.class);
 			account.setAccountnumber(account.getAccountnumber());
 			account = accountDao.save(account);
-			
+
 			return new CommonResponse<AccountDto>(modelMapper.map(account, AccountDto.class));
 		} catch (CustomException e) {
 			return new CommonResponse("01", e.getMessage());
@@ -138,10 +138,10 @@ public class AccountController {
 	public CommonResponse delete(@PathVariable("account") Integer account) throws CustomException {
 		try {
 			Account checkAccount = accountDao.getById(account);
-			if(checkAccount == null) {
+			if (checkAccount == null) {
 				return new CommonResponse("06", "account tidak ditemukan");
 			}
-			
+
 			accountDao.delete(checkAccount);
 			return new CommonResponse();
 		} catch (CustomException e) {
