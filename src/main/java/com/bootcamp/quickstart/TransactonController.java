@@ -52,7 +52,7 @@ public class TransactonController {
 	@GetMapping("/list")
 	public List<Transaction> getList(@RequestParam(name="account", defaultValue="")String id) throws CustomException{
 		if(!StringUtils.isEmpty(id)) {
-			Account checkAccount = accountDao.getById(id);
+			Account checkAccount = accountDao.getById(Integer.parseInt(id));
 			if(checkAccount==null) {
 				throw new CustomException("account tidak ditemukan");
 			}

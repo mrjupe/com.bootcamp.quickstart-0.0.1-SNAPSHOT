@@ -24,6 +24,7 @@ import com.bootcamp.model.dto.CustomerDto;
 
 @RestController
 @RequestMapping("/customer")
+@SuppressWarnings("rawtypes")
 public class CustomerController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
@@ -77,20 +78,26 @@ public class CustomerController {
 			if (checkCustomer == null) {
 				return new CommonResponse("14", "customer tidak ditemukan");
 			}
-			if (customer.getBirthdate() != null) {
-				checkCustomer.setBirthdate(customer.getBirthdate());
-			}
 			if (customer.getFirstname() != null) {
 				checkCustomer.setFirstname(customer.getFirstname());
 			}
 			if (customer.getLastname() != null) {
 				checkCustomer.setLastname(customer.getLastname());
 			}
+			if (customer.getBirthdate() != null) {
+				checkCustomer.setBirthdate(customer.getBirthdate());
+			}
 			if (customer.getPhonenumber() != null) {
 				checkCustomer.setPhonenumber(customer.getPhonenumber());
 			}
 			if (customer.getTypephone() != null) {
 				checkCustomer.setTypephone(customer.getTypephone());
+			}
+			if (customer.getUsername() != null) {
+				checkCustomer.setUsername(customer.getUsername());
+			}
+			if (customer.getPassword() != null) {
+				checkCustomer.setPassword(customer.getPassword());
 			}
 
 			checkCustomer = customerDao.save(checkCustomer);

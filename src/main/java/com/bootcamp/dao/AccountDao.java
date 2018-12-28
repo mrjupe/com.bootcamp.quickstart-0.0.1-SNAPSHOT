@@ -8,7 +8,7 @@ import com.bootcamp.quickstart.CustomException;
 
 public interface AccountDao {
 
-	Account getById(String id) throws CustomException;
+	Account getById(int id) throws CustomException;
 	Account save(Account account) throws CustomException;
 	void delete(Account account) throws CustomException;
 	
