@@ -122,7 +122,7 @@ public class AccountController {
 	public CommonResponse insert(@RequestBody AccountDto accountDto) throws CustomException {
 		try {
 			Account account = modelMapper.map(accountDto, Account.class);
-			account.setAccountnumber(0);
+			account.setAccountnumber(account.getAccountnumber());
 			account = accountDao.save(account);
 			
 			return new CommonResponse<AccountDto>(modelMapper.map(account, AccountDto.class));

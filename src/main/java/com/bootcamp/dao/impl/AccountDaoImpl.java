@@ -20,7 +20,7 @@ public class AccountDaoImpl extends BaseImpl implements AccountDao {
 	private AccountRepository repository;
 	
 	@Override
-	public Account getById(String id) throws CustomException {
+	public Account getById(int id) throws CustomException {
 		return repository.findOne(Integer.valueOf(id));
 	}
 

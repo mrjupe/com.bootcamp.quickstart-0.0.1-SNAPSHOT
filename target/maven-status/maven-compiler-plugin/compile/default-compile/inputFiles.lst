@@ -3,6 +3,7 @@ C:\Users\CODE.ID\eclipse-workspace\com.bootcamp.quickstart-0.0.1-SNAPSHOT\src\ma
 C:\Users\CODE.ID\eclipse-workspace\com.bootcamp.quickstart-0.0.1-SNAPSHOT\src\main\java\com\bootcamp\quickstart\CustomerController.java
 C:\Users\CODE.ID\eclipse-workspace\com.bootcamp.quickstart-0.0.1-SNAPSHOT\src\main\java\com\bootcamp\dao\AccountDao.java
 C:\Users\CODE.ID\eclipse-workspace\com.bootcamp.quickstart-0.0.1-SNAPSHOT\src\main\java\com\bootcamp\dao\impl\BaseImpl.java
+C:\Users\CODE.ID\eclipse-workspace\com.bootcamp.quickstart-0.0.1-SNAPSHOT\src\main\java\com\bootcamp\model\dto\AccountDto.java
 C:\Users\CODE.ID\eclipse-workspace\com.bootcamp.quickstart-0.0.1-SNAPSHOT\src\main\java\com\bootcamp\dao\TransactionDao.java
 C:\Users\CODE.ID\eclipse-workspace\com.bootcamp.quickstart-0.0.1-SNAPSHOT\src\main\java\com\bootcamp\dao\repository\AccountRepository.java
 C:\Users\CODE.ID\eclipse-workspace\com.bootcamp.quickstart-0.0.1-SNAPSHOT\src\main\java\com\bootcamp\dao\repository\TransactionRepository.java
