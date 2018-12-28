@@ -2,5 +2,5 @@ projectKey=com.bootcamp:quickstart
 serverUrl=http://localhost:9000
 serverVersion=7.5.0.20543
 dashboardUrl=http://localhost:9000/dashboard?id=com.bootcamp%3Aquickstart
-ceTaskId=AWfwXy-RTkjqgSXV4s0Q
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AWfwXy-RTkjqgSXV4s0Q
+ceTaskId=AWfyl9N_TkjqgSXV4s0R
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWfyl9N_TkjqgSXV4s0R
