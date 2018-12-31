@@ -60,7 +60,7 @@ public class TransactonController {
 	}
 
 	@GetMapping("/list")
-	public CommonResponse getList(@RequestParam(name = "account", defaultValue = "") String account)
+	public CommonResponse getList(@RequestParam(name = "accountnumber", defaultValue = "") String account)
 			throws CustomException {
 		try {
 			LOGGER.info("Account get list, params : {} ", account);
@@ -119,6 +119,9 @@ public class TransactonController {
 			}
 			if (transaction.getAmount() != 0) {
 				checkTransaction.setAmount(transaction.getAmount());
+			}
+			if (transaction.getAmountsign() != null) {
+				checkTransaction.setAmountsign(transaction.getAmountsign());
 			}
 			if (transaction.getAccount() != null) {
 				checkTransaction.setAccount(transaction.getAccount());

@@ -60,7 +60,7 @@ public class AccountController {
 	}
 
 	@GetMapping("/list")
-	public CommonResponse getList(@RequestParam(name = "customer", defaultValue = "") String customer)
+	public CommonResponse getList(@RequestParam(name = "customerid", defaultValue = "") String customer)
 			throws CustomException {
 		try {
 			LOGGER.info("Customer get list, params : {} ", customer);
